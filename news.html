@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости - Club&Games</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-content">
+                <a href="index.html" class="nav-brand">🎮 Club&Games</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="games.html">Игры</a></li>
+                    <li><a href="news.html" class="active">Новости</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Новости</h1>
+            <p>Будьте в курсе всех событий и обновлений</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Все новости</h2>
+
+            <!-- Новость 1 с якорем -->
+            <div class="news-card news-with-image" id="news-opening">
+                <h3>🎮 Открытие сайта</h3>
+                <span class="news-date">15 октября 2025</span>
+
+                <!-- Блок с изображением -->
+                <div class="news-image-container">
+                    <img src="assets/images/FirstNews.png"
+                         alt="Открытие сайта Club&Games"
+                         class="news-image">
+                </div>
+
+                <p>Сегодня спустя несколько лет сайт преобразился.</p>
+                <p>Изменен его внешний вид, содержание и другое!</p>
+            </div>
+
+            <!-- Новость 2 с якорем -->
+            <div class="news-card news-with-image" id="news-announcement">
+                <h3>🚀 Анонс новой игры</h3>
+                <span class="news-date">15 октября 2025</span>
+
+                <!-- Блок с изображением -->
+                <div class="news-image-container">
+                    <img src="assets/images/АнонсSoI.png"
+                         alt="Анонс игры Survival On Islands"
+                         class="news-image">
+                </div>
+
+                <p>Скоро мы представим нашу новую игру "Survail On Islands"!</p>
+                <p>Ожидайте скорый релиз и будьте готовы к приключениям.</p>
+                <p>Уже сейчас вы можете <a href="games.html#survival-on-islands">скачать игру Survail On Islands</a> и начать своё приключение!</p>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Кнопка "Наверх" -->
+    <a href="#" class="back-to-top">↑</a>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-contacts">
+                <h3>Наши контакты</h3>
+                <div class="contact-links">
+                    <a href="mailto:clubgamesoff@gmail.com" class="contact-link">
+                        <span class="contact-icon">📧</span>
+                        Email
+                    </a>
+                    <a href="https://t.me/kokochuna" class="contact-link" target="_blank">
+                        <span class="contact-icon">📢</span>
+                        Telegram
+                    </a>
+                    <a href="https://www.youtube.com/@kokochuna" class="contact-link" target="_blank">
+                        <span class="contact-icon">🎥</span>
+                        YouTube
+                    </a>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2025 Club&Games. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
