@@ -3,7 +3,7 @@ function loadLatestNews() {
     container.innerHTML = `
         <div class="news-card featured news-with-image" onclick="navigateToLatestNews()" style="cursor: pointer;">
             <h3>🎮 Открытие сайта</h3>
-            <span class="news-date">15 октября 2025</span>
+            <span class="news-date">16 октября 2025</span>
 
             <!-- Блок с изображением -->
             <div class="news-image-container">
