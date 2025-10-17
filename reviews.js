@@ -1,11 +1,11 @@
-// reviews.js
+﻿// reviews.js
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Обработка всех форм отзывов
     const reviewForms = document.querySelectorAll('.review-form-element');
-    
+
     reviewForms.forEach(form => {
-        form.addEventListener('submit', function(e) {
+        form.addEventListener('submit', function (e) {
             e.preventDefault();
             submitReview(this);
         });
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function submitReview(form) {
     const formData = new FormData(form);
     const game = form.getAttribute('data-game');
-    
+
     const review = {
         game: game,
         name: formData.get('name').trim(),
@@ -49,14 +49,14 @@ function submitReview(form) {
     createGitHubIssue(review);
 }
 
-function createGitHubIssue(review) {
+function createGitHubIssue(review, form) {
     const username = 'ClubGames';
     const repo = 'club_games';
-    
+
     // Создаем заголовок issue
     const title = `Отзыв: ${review.game} - ${review.name}`;
-    
-    // Создаем тело issue с ВСЕМИ данными в Markdown
+
+    // Создаем тело issue
     const body = `
 ### 🎮 Информация об отзыве
 
@@ -74,38 +74,42 @@ ${review.comment}
 
 ---
 
-### 📊 Статистика отзыва:
-- **Длина отзыва:** ${review.comment.length} символов
-- **Оценка:** ${review.rating} из 5
-- **Игра:** ${review.game}
-
----
-
-*📝 Этот отзыв был отправлен через сайт [Club&Games](https://clubgames.github.io/club_games/)*  
-*🕒 Время отправки: ${new Date().toISOString()}*
+*📝 Этот отзыв был отправлен через сайт [Club&Games](https://clubgames.github.io/club_games/)*
     `.trim();
 
-    // Создаем labels для игры
-    let gameLabel = 'shooting-city-2'; // По умолчанию для Shooting City 2
-    
-    if (review.game.includes('Survival On Islands')) {
+    // ОПРЕДЕЛЯЕМ ЛЕЙБЛЫ
+    let gameLabel = '';
+
+    if (review.game === 'Survival On Islands') {
         gameLabel = 'survival-on-islands';
     }
+    else if (review.game === '[Low Poly] Shooting City 2') {
+        gameLabel = 'shooting-city-2';
+    }
 
-    const labels = ['review', gameLabel].filter(Boolean);
-    const labelsParam = labels.map(label => `labels=${encodeURIComponent(label)}`).join('&');
-    
+    // ВСЕ ЛЕЙБЛЫ В ОДНОМ ПАРАМЕТРЕ, РАЗДЕЛЕННЫЕ ЗАПЯТЫМИ
+    const allLabels = ['review'];
+    if (gameLabel) {
+        allLabels.push(gameLabel);
+    }
+
+    const labelsParam = `labels=${allLabels.map(label => encodeURIComponent(label)).join(',')}`;
+
     // Формируем URL для создания issue
     const issueUrl = `https://github.com/${username}/${repo}/issues/new?${labelsParam}&title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
-    
+
+    console.log('GitHub URL:', issueUrl);
+
     // Открываем в новом окне
     const newWindow = window.open(issueUrl, '_blank');
-    
+
     if (newWindow) {
         showSuccessMessage();
         form.reset();
+        form.classList.remove('loading');
     } else {
         alert('Пожалуйста, разрешите всплывающие окна для этого сайта');
+        form.classList.remove('loading');
     }
 }
 
@@ -125,7 +129,7 @@ function showSuccessMessage() {
         animation: slideIn 0.3s ease;
         max-width: 300px;
     `;
-    
+
     notification.innerHTML = `
         <div style="display: flex; align-items: center; gap: 0.5rem;">
             <span style="font-size: 1.2rem;">✅</span>
@@ -137,9 +141,9 @@ function showSuccessMessage() {
             </div>
         </div>
     `;
-    
+
     document.body.appendChild(notification);
-    
+
     // Убираем уведомление через 5 секунд
     setTimeout(() => {
         notification.style.animation = 'slideOut 0.3s ease';
