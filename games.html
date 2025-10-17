@@ -49,6 +49,48 @@
                         <p><strong>Версия:</strong> альфа 0.01.0</p>
                         <p><strong>Размер:</strong> 101 MB</p>
                         <a href="https://drive.google.com/file/d/1Hr5sa8km4i4i2MX_CbRIP11Bz5zjpUuZ/view?usp=sharing" class="btn" target="_blank">Скачать с Google Диска</a>
+
+                        <!-- Секция отзывов -->
+                        <div class="reviews-section">
+                            <h4>💬 Отзывы об игре</h4>
+
+                            <!-- Форма отзыва -->
+                            <div class="review-form">
+                                <h5>Оставить отзыв</h5>
+                                <form class="review-form-element" data-game="Survival On Islands">
+                                    <div class="form-group">
+                                        <label>Ваше имя:</label>
+                                        <input type="text" name="name" placeholder="Как к вам обращаться?" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Оценка:</label>
+                                        <select name="rating" required>
+                                            <option value="">Выберите оценку</option>
+                                            <option value="5">⭐️⭐️⭐️⭐️⭐️ Отлично (5)</option>
+                                            <option value="4">⭐️⭐️⭐️⭐️ Хорошо (4)</option>
+                                            <option value="3">⭐️⭐️⭐️ Нормально (3)</option>
+                                            <option value="2">⭐️⭐️ Плохо (2)</option>
+                                            <option value="1">⭐️ Ужасно (1)</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Ваш отзыв:</label>
+                                        <textarea name="comment" rows="4" placeholder="Расскажите о вашем опыте игры..." required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn">
+                                        📨 Отправить отзыв
+                                    </button>
+                                </form>
+                            </div>
+
+                            <!-- Ссылка для просмотра существующих отзывов -->
+                            <div class="existing-reviews">
+                                <a href="https://github.com/ClubGames/club_games/issues?q=is:issue+label:review+label:survival-on-islands+sort:created-desc"
+                                   class="btn btn-outline" target="_blank">
+                                    📝 Посмотреть все отзывы (GitHub)
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -60,6 +102,48 @@
                         <p><strong>Версия:</strong> альфа 0.02.0</p>
                         <p><strong>Размер:</strong> 512 MB</p>
                         <a href="https://drive.google.com/file/d/1rHUsyC3OTj1o90VtmXIlT2nDs_ChIZ5T/view?usp=sharing" class="btn" target="_blank">Скачать с Google Диска</a>
+
+                        <!-- Секция отзывов для Shooting City 2 -->
+                        <div class="reviews-section">
+                            <h4>💬 Отзывы об игре</h4>
+
+                            <!-- Форма отзыва -->
+                            <div class="review-form">
+                                <h5>Оставить отзыв</h5>
+                                <form class="review-form-element" data-game="[Low Poly] Shooting City 2">
+                                    <div class="form-group">
+                                        <label>Ваше имя:</label>
+                                        <input type="text" name="name" placeholder="Как к вам обращаться?" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Оценка:</label>
+                                        <select name="rating" required>
+                                            <option value="">Выберите оценку</option>
+                                            <option value="5">⭐️⭐️⭐️⭐️⭐️ Отлично (5)</option>
+                                            <option value="4">⭐️⭐️⭐️⭐️ Хорошо (4)</option>
+                                            <option value="3">⭐️⭐️⭐️ Нормально (3)</option>
+                                            <option value="2">⭐️⭐️ Плохо (2)</option>
+                                            <option value="1">⭐️ Ужасно (1)</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Ваш отзыв:</label>
+                                        <textarea name="comment" rows="4" placeholder="Расскажите о вашем опыте игры..." required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn">
+                                        📨 Отправить отзыв
+                                    </button>
+                                </form>
+                            </div>
+
+                            <!-- Ссылка для просмотра существующих отзывов -->
+                            <div class="existing-reviews">
+                                <a href="https://github.com/ClubGames/club_games/issues?q=is:issue+label:review+label:shooting-city-2+sort:created-desc"
+                                   class="btn btn-outline" target="_blank">
+                                    📝 Посмотреть все отзывы (GitHub)
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -104,5 +188,6 @@
             </div>
         </div>
     </footer>
+    <script src="reviews.js"></script>
 </body>
 </html>
