@@ -1,22 +1,25 @@
 function loadLatestNews() {
     const container = document.getElementById('latest-news-container');
     container.innerHTML = `
-        <div class="news-card featured news-with-image" onclick="navigateToLatestNews()" style="cursor: pointer;">
-            <h3>🎮 Открытие сайта</h3>
-            <span class="news-date">16 октября 2025</span>
+        <div class="news-card news-with-image featured" onclick="navigateToLatestNews()" style="cursor: pointer;">
+            <div class="click-indicator">Нажмите для перехода</div>
+            <h3>🎥 Новое видео на канале!</h3>
+            <span class="news-date">17 октября 2025</span>
 
             <!-- Блок с изображением -->
             <div class="news-image-container">
-                <img src="assets/images/FirstNews.png"
-                     alt="Открытие сайта Club&Games"
+                <img src="assets/images/SoI4part.png"
+                     alt="Анонс игры Survival On Islands"
                      class="news-image">
             </div>
 
-            <p>Сегодня спустя несколько лет сайт преобразился.</p>
-            <p>Изменен его внешний вид, содержание и другое!</p>
+            <p>На YouTube канале вышла 4 часть про SoI.</p>
+            <p>Скорей иди смотри, пока новое!</p>
+            <p>В 15:00 по МСК - <a href="https://youtu.be/Ju5P-TI2qVA" onclick="event.stopPropagation()">смотреть видео</a></p>
             
-            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed #fecaca;">
-                <small style="color: var(--primary-red);">🔍 Нажмите на карточку, чтобы перейти к полной новости</small>
+            <!-- Кнопка для перехода -->
+            <div style="margin-top: 1rem;">
+                <a href="news.html#news-SoI4part" class="btn" onclick="event.stopPropagation()">Читать полностью</a>
             </div>
         </div>
     `;
@@ -24,8 +27,7 @@ function loadLatestNews() {
 
 // Функция для перехода к последней новости
 function navigateToLatestNews() {
-    // Переходим на страницу новостей с якорем к первой новости
-    window.location.href = 'news.html#news-opening';
+    window.location.href = 'news.html#news-SoI4part';
 }
 
 function showErrorMessage(message) {
