@@ -1,7 +1,4 @@
-﻿// reviews.js
-
-document.addEventListener('DOMContentLoaded', function () {
-    // Обработка всех форм отзывов
+﻿document.addEventListener('DOMContentLoaded', function () {
     const reviewForms = document.querySelectorAll('.review-form-element');
 
     reviewForms.forEach(form => {
@@ -30,7 +27,6 @@ function submitReview(form) {
         })
     };
 
-    // Валидация
     if (!review.name || !review.rating || !review.comment) {
         alert('Пожалуйста, заполните все поля!');
         return;
@@ -53,10 +49,8 @@ function createGitHubIssue(review, form) {
     const username = 'ClubGames';
     const repo = 'club_games';
 
-    // Создаем заголовок issue
     const title = `Отзыв: ${review.game} - ${review.name}`;
 
-    // Создаем тело issue
     const body = `
 ### 🎮 Информация об отзыве
 
@@ -77,7 +71,6 @@ ${review.comment}
 *📝 Этот отзыв был отправлен через сайт [Club&Games](https://clubgames.github.io/club_games/)*
     `.trim();
 
-    // ОПРЕДЕЛЯЕМ ЛЕЙБЛЫ
     let gameLabel = '';
 
     if (review.game === 'Survival On Islands') {
@@ -87,7 +80,6 @@ ${review.comment}
         gameLabel = 'shooting-city-2';
     }
 
-    // ВСЕ ЛЕЙБЛЫ В ОДНОМ ПАРАМЕТРЕ, РАЗДЕЛЕННЫЕ ЗАПЯТЫМИ
     const allLabels = ['review'];
     if (gameLabel) {
         allLabels.push(gameLabel);
@@ -95,12 +87,10 @@ ${review.comment}
 
     const labelsParam = `labels=${allLabels.map(label => encodeURIComponent(label)).join(',')}`;
 
-    // Формируем URL для создания issue
     const issueUrl = `https://github.com/${username}/${repo}/issues/new?${labelsParam}&title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
 
     console.log('GitHub URL:', issueUrl);
 
-    // Открываем в новом окне
     const newWindow = window.open(issueUrl, '_blank');
 
     if (newWindow) {
@@ -114,7 +104,6 @@ ${review.comment}
 }
 
 function showSuccessMessage() {
-    // Создаем красивое уведомление
     const notification = document.createElement('div');
     notification.style.cssText = `
         position: fixed;
@@ -144,7 +133,6 @@ function showSuccessMessage() {
 
     document.body.appendChild(notification);
 
-    // Убираем уведомление через 5 секунд
     setTimeout(() => {
         notification.style.animation = 'slideOut 0.3s ease';
         setTimeout(() => {
@@ -155,7 +143,6 @@ function showSuccessMessage() {
     }, 5000);
 }
 
-// Добавляем стили для анимации
 const style = document.createElement('style');
 style.textContent = `
     @keyframes slideIn {

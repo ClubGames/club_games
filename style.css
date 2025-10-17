@@ -20,7 +20,6 @@ body {
     background-color: var(--light-red);
 }
 
-/* Навигация */
 .navbar {
     background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
     padding: 1rem 2rem;
@@ -66,14 +65,12 @@ body {
     transform: translateY(-2px);
 }
 
-/* Основной контейнер */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
 }
 
-/* Герой секция */
 .hero {
     text-align: center;
     padding: 4rem 2rem;
@@ -95,7 +92,6 @@ body {
     opacity: 0.9;
 }
 
-/* Секции контента */
 .content-section {
     background: var(--white);
     padding: 2rem;
@@ -114,7 +110,6 @@ body {
     display: inline-block;
 }
 
-/* Карточки */
 .news-card {
     background: var(--white);
     border: 2px solid #fecaca;
@@ -148,7 +143,6 @@ body {
     display: block;
 }
 
-/* Кнопки */
 .btn {
     display: inline-block;
     background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
@@ -179,7 +173,6 @@ body {
     color: var(--white);
 }
 
-/* Игровые карточки */
 .game-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -228,7 +221,6 @@ body {
     font-size: 0.9rem;
 }
 
-/* Футер */
 footer {
     background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
     color: var(--white);
@@ -237,7 +229,6 @@ footer {
     margin-top: 4rem;
 }
 
-/* Стили для загрузки новостей */
 #latest-news-container {
     min-height: 100px;
 }
@@ -255,7 +246,6 @@ footer {
     color: var(--primary-red);
 }
 
-/* Стили для изображений в новостях 16:9 */
 .news-image {
     width: 100%;
     height: auto;
@@ -278,7 +268,6 @@ footer {
     flex-direction: column;
 }
 
-/* Заглушки для изображений в формате 16:9 */
 .image-placeholder {
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -293,7 +282,6 @@ footer {
     border: 2px solid #fecaca;
 }
 
-/* Стили для футера с контактами */
 .footer-content {
     display: grid;
     grid-template-columns: 1fr auto;
@@ -349,7 +337,6 @@ footer {
     color: rgba(255, 255, 255, 0.8);
 }
 
-/* Адаптивность для футера */
 @media (max-width: 768px) {
     .footer-content {
         grid-template-columns: 1fr;
@@ -382,7 +369,6 @@ html {
     margin-top: 1rem;
 }
 
-/* Подсветка якоря при переходе */
 .game-card:target {
     animation: highlight 2s ease;
     border-color: var(--primary-red);
@@ -403,7 +389,6 @@ html {
     }
 }
 
-/* Кнопка "Наверх" */
 .back-to-top {
     position: fixed;
     bottom: 2rem;
@@ -427,7 +412,7 @@ html {
         transform: translateY(-3px);
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
     }
-/* Стили для кликабельных карточек новостей */
+
 .news-card[onclick] {
     cursor: pointer;
     transition: all 0.3s ease;
@@ -444,7 +429,6 @@ html {
         transform: translateY(-2px);
     }
 
-/* Стили для секции отзывов */
 .reviews-section {
     margin-top: 2rem;
     padding: 1.5rem;
@@ -515,7 +499,6 @@ html {
     border-top: 1px solid #fecaca;
 }
 
-/* Адаптивность для форм */
 @media (max-width: 768px) {
     .reviews-section {
         padding: 1rem;
@@ -529,14 +512,12 @@ html {
     }
 }
 
-/* Стили для кнопки отправки отзыва */
 .review-form .btn {
     width: 100%;
     margin-top: 0.5rem;
     font-size: 1rem;
 }
 
-/* Улучшенные стили для select */
 .form-group select {
     cursor: pointer;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
@@ -549,19 +530,16 @@ html {
     appearance: none;
 }
 
-/* Стили для placeholder */
 .form-group input::placeholder,
 .form-group textarea::placeholder {
     color: #9ca3af;
     opacity: 1;
 }
 
-/* Улучшенные стили для текстового поля */
 .form-group textarea {
     line-height: 1.5;
 }
 
-/* Стили для состояния загрузки */
 .review-form-element.loading {
     opacity: 0.6;
     pointer-events: none;
@@ -585,7 +563,6 @@ html {
         content: '...';
     }
 }
-/* Индикатор кликабельности */
 .click-indicator {
     position: absolute;
     top: 1rem;
@@ -612,7 +589,58 @@ html {
     }
 }
 
-/* Подсветка новости при переходе по якорю */
+.contact-link[href^="mailto:"] {
+    position: relative;
+}
+
+    .contact-link[href^="mailto:"]:hover::after {
+        content: "Написать нам на почту";
+        position: absolute;
+        bottom: -35px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--text-dark);
+        color: white;
+        padding: 0.4rem 0.8rem;
+        border-radius: 0.375rem;
+        font-size: 0.8rem;
+        white-space: nowrap;
+        z-index: 1000;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+.contact-link[href*="t.me"]:hover::after {
+    content: "Наш Telegram канал";
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--text-dark);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.375rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    z-index: 1000;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.contact-link[href*="youtube.com"]:hover::after {
+    content: "Наш YouTube канал";
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--text-dark);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.375rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    z-index: 1000;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
 .news-card:target {
     animation: news-highlight 2s ease;
     border: 2px solid var(--primary-red);
@@ -629,7 +657,6 @@ html {
     }
 }
 
-/* Адаптивность */
 @media (max-width: 768px) {
     .nav-content {
         flex-direction: column;

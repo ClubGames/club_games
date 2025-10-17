@@ -25,7 +25,6 @@ function loadLatestNews() {
     `;
 }
 
-// Функция для перехода к последней новости
 function navigateToLatestNews() {
     window.location.href = 'news.html#news-SoI4part';
 }
@@ -41,5 +40,4 @@ function showErrorMessage(message) {
     `;
 }
 
-// Загружаем последнюю новость при загрузке страницы
 document.addEventListener('DOMContentLoaded', loadLatestNews);
