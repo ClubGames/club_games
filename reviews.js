@@ -42,7 +42,10 @@ function submitReview(form) {
         return;
     }
 
-    createGitHubIssue(review);
+    // Показываем индикатор загрузки
+    form.classList.add('loading');
+
+    createGitHubIssue(review, form);
 }
 
 function createGitHubIssue(review, form) {
@@ -91,6 +94,7 @@ ${review.comment}
 
     console.log('GitHub URL:', issueUrl);
 
+    // Открываем GitHub в новом окне/вкладке
     const newWindow = window.open(issueUrl, '_blank');
 
     if (newWindow) {
