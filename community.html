@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сообщество - Club&Games</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-content">
+                <a href="index.html" class="nav-brand">🎮 Club&Games</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="games.html">Игры</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="community.html" class="active">Сообщество</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Сообщество Club&Games</h1>
+            <p>Общайтесь, делитесь мнениями и находите единомышленников</p>
+        </section>
+
+        <section class="content-section">
+            <h2>💬 Общие обсуждения</h2>
+            <p>Здесь вы можете обсудить всё, что связано с играми, предложить идеи или просто пообщаться с другими игроками.</p>
+
+            <div class="discussion-form">
+                <h3>Создать новое обсуждение</h3>
+                <form id="discussion-form">
+                    <div class="form-group">
+                        <label>Ваше имя:</label>
+                        <input type="text" id="discussion-author" placeholder="Как к вам обращаться?" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Тема обсуждения:</label>
+                        <input type="text" id="discussion-title" placeholder="О чём хотите поговорить?" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Сообщение:</label>
+                        <textarea id="discussion-message" rows="5" placeholder="Начните обсуждение..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn">
+                        📝 Создать обсуждение
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>📢 Активные обсуждения</h2>
+            <div id="discussions-container">
+                <div class="loading-message">
+                    <p>Загрузка обсуждений...</p>
+                </div>
+            </div>
+
+            <div class="discussions-actions">
+                <a href="https://github.com/ClubGames/club_games/issues?q=is:issue+label:discussion"
+                   class="btn btn-outline" target="_blank">
+                    📋 Все обсуждения на GitHub
+                </a>
+                <button onclick="loadDiscussions()" class="btn">
+                    🔄 Обновить
+                </button>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>ℹ️ Как это работает?</h2>
+            <div class="info-cards">
+                <div class="info-card">
+                    <h3>📝 Создание обсуждения</h3>
+                    <p>Заполните форму выше - ваше сообщение автоматически создаст issue на GitHub</p>
+                </div>
+                <div class="info-card">
+                    <h3>💬 Ответы и комментарии</h3>
+                    <p>Другие пользователи могут отвечать на ваши обсуждения через GitHub</p>
+                </div>
+                <div class="info-card">
+                    <h3>👀 Просмотр на сайте</h3>
+                    <p>Все обсуждения и комментарии автоматически отображаются на этой странице</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <a href="#" class="back-to-top">↑</a>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-contacts">
+                <h3>Наши контакты</h3>
+                <div class="contact-links">
+                    <a href="mailto:clubgamesoff@gmail.com?subject=Вопрос%20о%20Club%26Games&body=Здравствуйте!%20Пишу%20по%20поводу..."
+                       class="contact-link"
+                       title="Написать нам на почту">
+                        <span class="contact-icon">📧</span>
+                        clubgamesoff@gmail.com
+                    </a>
+                    <a href="https://t.me/kokochuna" class="contact-link" target="_blank">
+                        <span class="contact-icon">📢</span>
+                        Telegram
+                    </a>
+                    <a href="https://www.youtube.com/@kokochuna" class="contact-link" target="_blank">
+                        <span class="contact-icon">🎥</span>
+                        YouTube
+                    </a>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2025 Club&Games. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="community.js"></script>
+</body>
+</html>

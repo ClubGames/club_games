@@ -698,3 +698,198 @@ html {
         grid-template-columns: 1fr;
     }
 }
+
+/* Стили для страницы сообщества */
+.discussion-form {
+    background: var(--light-red);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 2px solid #fecaca;
+    margin-bottom: 2rem;
+}
+
+.discussion-card {
+    background: var(--white);
+    border: 2px solid #fecaca;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+    .discussion-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+.discussion-header {
+    display: flex;
+    justify-content: between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+    .discussion-header h3 {
+        color: var(--primary-red);
+        margin: 0;
+        flex: 1;
+    }
+
+.discussion-date {
+    color: var(--text-light);
+    font-size: 0.875rem;
+    white-space: nowrap;
+}
+
+.discussion-author {
+    margin-bottom: 1rem;
+}
+
+.discussion-content {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.discussion-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #fecaca;
+}
+
+.comments-count {
+    color: var(--text-light);
+    font-size: 0.875rem;
+}
+
+.discussion-number {
+    color: var(--text-light);
+    font-size: 0.875rem;
+    background: var(--light-red);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.discussion-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.comments-container {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #fecaca;
+}
+
+    .comments-container.hidden {
+        display: none;
+    }
+
+.comment-card {
+    background: var(--light-red);
+    border: 1px solid #fecaca;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+    .comment-card:last-child {
+        margin-bottom: 0;
+    }
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.comment-author {
+    color: var(--primary-red);
+    font-size: 0.9rem;
+}
+
+.comment-date {
+    color: var(--text-light);
+    font-size: 0.8rem;
+}
+
+.comment-content {
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.info-card {
+    background: var(--light-red);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 2px solid #fecaca;
+    text-align: center;
+}
+
+    .info-card h3 {
+        color: var(--primary-red);
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+    }
+
+.discussions-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.loading-message, .no-discussions, .no-comments {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-light);
+}
+
+.error-message {
+    background: #fee2e2;
+    border: 2px solid #fecaca;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    color: var(--primary-red);
+}
+
+.error {
+    color: var(--primary-red);
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .discussion-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .discussion-actions {
+        flex-direction: column;
+    }
+
+    .discussions-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-cards {
+        grid-template-columns: 1fr;
+    }
+}

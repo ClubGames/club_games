@@ -1,25 +1,21 @@
-function loadLatestNews() {
+﻿function loadLatestNews() {
     const container = document.getElementById('latest-news-container');
     container.innerHTML = `
         <div class="news-card news-with-image featured" onclick="navigateToLatestNews()" style="cursor: pointer;">
     <div class="click-indicator">Нажмите для перехода</div>
-    <h3>🎥 Половина от тысячи на канале</h3>
-    <span class="news-date">19 октября 2025</span>
+                <h3>📰 Сообщество на сайте!</h3>
+                <span class="news-date">22 октября 2025</span>
 
-    <div class="news-image-container">
-        <img src="assets/images/500подп.png"
-            alt="Половина от тысячи на канале"
-            class="news-image">
-    </div>
+                <div class="news-image-container">
+                    <img src="assets/images/сообщество.png"
+                         alt="Сообщество на сайте"
+                         class="news-image">
+                </div>
 
-    <p>Наконец-то на канале стукнуло 500 подписчиков (уже 505)</p>
-    <p>Я всем вам благодарен, спасибо</p>
-    <p>Новая цель - 1000</p>
-    <p><a href="https://www.youtube.com/@kokochuna">YouTube канал</a></p>
-
-    <!-- Кнопка для перехода -->
-    <div style="margin-top: 1rem;">
-        <a href="news.html#news-SoI4part" class="btn" onclick="event.stopPropagation()">Читать полностью</a>
+                <p>На сайте появилось сообщество!</p>
+                <p>Теперь вы можете создать обсуждаемую тему и ее люди могут комментировать</p>
+                <p>Если у вас есть вопросы по играм, то вам туда!</p>
+                <p>---> <a href="community.html">перейти на сообщество</a></p>
     </div>
 
 </div>
@@ -27,7 +23,7 @@ function loadLatestNews() {
 }
 
 function navigateToLatestNews() {
-    window.location.href = 'news.html#news-500podp';
+    window.location.href = 'news.html#news-Soobshestvo';
 }
 
 function showErrorMessage(message) {
