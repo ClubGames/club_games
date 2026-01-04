@@ -3,19 +3,20 @@
     container.innerHTML = `
         <div class="news-card news-with-image featured" onclick="navigateToLatestNews()" style="cursor: pointer;">
     <div class="click-indicator">Нажмите для перехода</div>
-                <h3>📰 Сообщество на сайте!</h3>
-                <span class="news-date">22 октября 2025</span>
+<h3>📰 Новое видео и игра!</h3>
+                <span class="news-date">4 января 2026</span>
 
                 <div class="news-image-container">
-                    <img src="assets/images/сообщество.png"
-                         alt="Сообщество на сайте"
+                    <img src="assets/images/factorydedmoroz.png"
+                         alt="Фабрика Деда Мороза"
                          class="news-image">
                 </div>
 
-                <p>На сайте появилось сообщество!</p>
-                <p>Теперь вы можете создать обсуждаемую тему и ее люди могут комментировать</p>
-                <p>Если у вас есть вопросы по играм, то вам туда!</p>
-                <p>---> <a href="community.html">перейти на сообщество</a></p>
+                <p>Сегодня вышло видео и игра!</p>
+                <p>На канале вышло новое видео про игру "Фабрика Деда Мороза"</p>
+                <p>А на сайте игра появилась в общем доступе!</p>
+                <p>---> <a href="https://youtu.be/MbhazvsOVQM">Смотреть видео (12:30 по МСК)</a></p>
+                <p>---> <a href="games.html#factory-ded-moroz">Скачать игру</a></p>
     </div>
 
 </div>
