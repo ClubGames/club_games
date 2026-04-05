@@ -175,18 +175,27 @@ body {
 
 .game-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
+    align-items: stretch; 
 }
 
 .game-card {
     background: var(--white);
     border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
     border: 2px solid #fecaca;
+    display: flex;
+    flex-direction: column; 
+    height: 100%; 
+    transition: transform 0.3s ease;
+}
+
+.game-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .game-card:hover {
@@ -197,16 +206,22 @@ body {
 .game-image {
     width: 100%;
     height: 200px;
-    background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+    background: var(--light-red);
     display: flex;
-    align-items: center;
     justify-content: center;
-    color: var(--white);
-    font-size: 3rem;
+    align-items: center;
+    overflow: hidden;
 }
 
-.game-content {
-    padding: 1.5rem;
+.game-card:hover .game-icon-img {
+    transform: scale(1.1); 
+}
+
+.game-icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
 .game-content h3 {
@@ -430,7 +445,7 @@ html {
     }
 
 .reviews-section {
-    margin-top: 2rem;
+    margin-top: auto; 
     padding: 1.5rem;
     background: var(--light-red);
     border-radius: 0.75rem;

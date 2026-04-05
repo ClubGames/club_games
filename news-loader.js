@@ -2,29 +2,24 @@
     const container = document.getElementById('latest-news-container');
     container.innerHTML = `
         <div class="news-card news-with-image featured" onclick="navigateToLatestNews()" style="cursor: pointer;">
-    <div class="click-indicator">Нажмите для перехода</div>
-<h3>📰 Новое видео и игра!</h3>
-                <span class="news-date">4 января 2026</span>
+            <div class="click-indicator">Нажмите для перехода</div>
+            <h3>🎮 Обновление SoI 0.02.0!</h3>
+            <span class="news-date">5 апреля 2026</span>
 
-                <div class="news-image-container">
-                    <img src="assets/images/factorydedmoroz.png"
-                         alt="Фабрика Деда Мороза"
-                         class="news-image">
-                </div>
+            <div class="news-image-container">
+                <img src="assets/images/SoI_icon.png"
+                     alt="Survival On Islands 0.02.0"
+                     class="news-image">
+            </div>
 
-                <p>Сегодня вышло видео и игра!</p>
-                <p>На канале вышло новое видео про игру "Фабрика Деда Мороза"</p>
-                <p>А на сайте игра появилась в общем доступе!</p>
-                <p>---> <a href="https://youtu.be/MbhazvsOVQM">Смотреть видео (12:30 по МСК)</a></p>
-                <p>---> <a href="games.html#factory-ded-moroz">Скачать игру</a></p>
-    </div>
-
-</div>
+            <p>Глобальное обновление: процедурная генерация, фермерство и консоль (F1) уже в игре!</p>
+            <p>---> <a href="news.html#news-SoI-0020">Подробнее об обновлении</a></p>
+        </div>
     `;
 }
 
 function navigateToLatestNews() {
-    window.location.href = 'news.html#news-Soobshestvo';
+    window.location.href = 'news.html#news-SoI-0020';
 }
 
 function showErrorMessage(message) {
